@@ -46,9 +46,9 @@
 
             docker run --name foodsoft_worker  -e SECRET_KEY_BASE='mYunBreAkaBleKEY15476147654145' -e DATABASE_URL='mysql2://root:mysql@172.17.0.2/foodsoftdb?encoding=utf8' -e REDIS_URL='redis://172.17.0.4:6379' -v /home/user/app_config.yml:/usr/src/app/config/app_config.yml:ro   foodcoops/foodsoft:4.6.0 ./proc-start worker
 	    
-		docker run --name foodsoft_smtp -e SECRET_KEY_BASE='mYunBreAkaBleKEY15476147654145' -e DATABASE_URL='mysql2://root:mysql@172.17.0.2/foodsoftdb?encoding=utf8' -e REDIS_URL='redis://172.17.0.4:6379' -v /home/user/app_config.yml:/usr/src/app/config/app_config.yml:ro   foodcoops/foodsoft:4.6.0 ./proc-start mail
+			docker run --name foodsoft_smtp -e SECRET_KEY_BASE='mYunBreAkaBleKEY15476147654145' -e DATABASE_URL='mysql2://root:mysql@172.17.0.2/foodsoftdb?encoding=utf8' -e REDIS_URL='redis://172.17.0.4:6379' -v /home/user/app_config.yml:/usr/src/app/config/app_config.yml:ro   foodcoops/foodsoft:4.6.0 ./proc-start mail
 	    
-		docker run --name foodsoft_cron -e SECRET_KEY_BASE='mYunBreAkaBleKEY15476147654145' -e DATABASE_URL='mysql2://root:mysql@172.17.0.2/foodsoftdb?encoding=utf8' -e REDIS_URL='redis://172.17.0.4:6379' -v /home/user/app_config.yml:/usr/src/app/config/app_config.yml:ro   foodcoops/foodsoft:4.6.0 ./proc-start cron
+			docker run --name foodsoft_cron -e SECRET_KEY_BASE='mYunBreAkaBleKEY15476147654145' -e DATABASE_URL='mysql2://root:mysql@172.17.0.2/foodsoftdb?encoding=utf8' -e REDIS_URL='redis://172.17.0.4:6379' -v /home/user/app_config.yml:/usr/src/app/config/app_config.yml:ro   foodcoops/foodsoft:4.6.0 ./proc-start cron
 
 ### Useful docker commands
 
