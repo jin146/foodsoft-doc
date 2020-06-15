@@ -14,10 +14,18 @@
 			docker run --name mysql -e MYSQL_ROOT_PASSWORD=mysql -d mysql:5.5
 
 			docker exec -it mysql mysql -u root -p
-
+			
+	It is recommended to run the mysql container in a way that preserves your database in case the container is shotdown
+			
+			mkdir /home/user/mysql
+			chmod 775 /home/user/mysql
+	(not sure for the rights)
+	
+  			docker run --name mysql -e MYSQL_ROOT_PASSWORD=mysql -d --volume=/home/user/mysql:/var/lib/mysql mysql:5.5
+			
 			CREATE database foodsoftdb;
-            CREATE user 'foodsoft';			
-            GRANT ALL ON `foodsoftdb`.* TO foodsoft;
+            		CREATE user 'foodsoft';			
+            		GRANT ALL ON `foodsoftdb`.* TO foodsoft;
 			FLUSH PRIVILEGES;
 
 			docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysql
